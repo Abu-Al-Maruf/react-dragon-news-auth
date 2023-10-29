@@ -1,3 +1,4 @@
+import AllNews from "../../AllNews/AllNews";
 import NewsLeft from "../../NewsLeft/NewsLeft";
 import NewsRight from "../../NewsRight/NewsRight";
 import Header from "../Header/Header";
@@ -14,7 +15,7 @@ const Home = () => {
           <NewsLeft></NewsLeft>
         </div>
         <div className="md:col-span-2">
-          <h2 className="text-2">News</h2>
+          <AllNews></AllNews>
         </div>
         <div>
           <NewsRight></NewsRight>
