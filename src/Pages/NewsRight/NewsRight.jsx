@@ -18,7 +18,7 @@ const NewsRight = () => {
 
 
   return (
-    <div>
+    <div className="sticky -top-[1050px] ">
       {/* login with  */}
       <div>
         <h2 className="text-2xl font-semibold">Login With</h2>
