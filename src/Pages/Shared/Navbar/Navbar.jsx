@@ -6,11 +6,9 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
 
-
-  const handleLogout = () =>{ 
-    logOut()
-  }
-
+  const handleLogout = () => {
+    logOut();
+  };
 
   const navlink = (
     <>
@@ -59,19 +57,20 @@ const Navbar = () => {
       <div className="navbar-end flex items-center gap-2">
         <img className="w-10" src={defaultUserImg} alt="" />
 
-        {
-          user ? 
-          <button onClick={handleLogout} className="bg-[#403F3F] py-2 px-10 hover:text-slate-400 text-white rounded">
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className="bg-[#10b6c2] py-2 px-10 hover:text-slate-400 text-white rounded"
+          >
             Log Out
           </button>
-          : <Link to={"/login"}>
-          <button className="bg-[#403F3F] py-2 px-10 hover:text-slate-400 text-white rounded">
-            Login
-          </button>
-        </Link>
-        }
-
-        
+        ) : (
+          <Link to={"/login"}>
+            <button className="bg-[#403F3F] py-2 px-10 hover:text-slate-400 text-white rounded">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

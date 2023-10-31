@@ -20,11 +20,11 @@ const Login = () => {
 
     signInUser(email, password)
       .then((res) => {
-        console.log(res)
-        navigate(location?.state ? location.state : '/')
+        console.log(res);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       });
   };
 

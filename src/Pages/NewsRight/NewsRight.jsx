@@ -9,13 +9,22 @@ import qZone1 from "../../assets/qZone1.png";
 import qZone2 from "../../assets/qZone2.png";
 import qZone3 from "../../assets/qZone3.png";
 import bgImg from "../../assets/bg.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const NewsRight = () => {
+  const { signInGoogle, signInGithub } = useContext(AuthContext);
 
-    const bgImage = {
-        backgroundImage:  `url(${bgImg})`
-    }
+  const bgImage = {
+    backgroundImage: `url(${bgImg})`,
+  };
 
+  const handleGoogleLogin = () => {
+    return signInGoogle();
+  };
+  const handleGithubLogin = () => {
+    return signInGithub();
+  };
 
   return (
     <div className="sticky -top-[1050px] ">
@@ -23,11 +32,17 @@ const NewsRight = () => {
       <div>
         <h2 className="text-2xl font-semibold">Login With</h2>
 
-        <button className="btn btn-outline btn-info w-full mt-5 flex items-center">
+        <button
+          onClick={handleGoogleLogin}
+          className="btn btn-outline btn-info w-full mt-5 flex items-center"
+        >
           <FaGoogle />
           Google
         </button>
-        <button className="btn btn-outline w-full mt-2 flex items-center">
+        <button
+          onClick={handleGithubLogin}
+          className="btn btn-outline w-full mt-2 flex items-center"
+        >
           <FaGithub />
           Github
         </button>
@@ -82,9 +97,12 @@ const NewsRight = () => {
           Create an Amazing Newspaper
         </h2>
         <p className="text-base text-white font-normal mt-5">
-        Discover thousands of options, easy to customize layouts, one-click to import demo and much more.
+          Discover thousands of options, easy to customize layouts, one-click to
+          import demo and much more.
         </p>
-        <button className="btn btn-error bg-[#D72050] border-0 mt-8 rounded-none text-white">Learn More</button>
+        <button className="btn btn-error bg-[#D72050] border-0 mt-8 rounded-none text-white">
+          Learn More
+        </button>
       </div>
     </div>
   );

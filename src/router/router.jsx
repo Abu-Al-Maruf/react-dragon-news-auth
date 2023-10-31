@@ -5,11 +5,13 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import NewsDetails from "../Pages/AllNews/NewsDetails/NewsDetails";
 import PrivateProvider from "./PrivateRoute";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",
@@ -25,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/newsdetails/:id",
-        element: <PrivateProvider><NewsDetails></NewsDetails></PrivateProvider>,
+        element: (
+          <PrivateProvider>
+            <NewsDetails></NewsDetails>
+          </PrivateProvider>
+        ),
       },
     ],
   },
