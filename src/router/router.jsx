@@ -3,6 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../Pages/Shared/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import NewsDetails from "../Pages/AllNews/NewsDetails/NewsDetails";
+import PrivateProvider from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/newsdetails/:id",
+        element: <PrivateProvider><NewsDetails></NewsDetails></PrivateProvider>,
       },
     ],
   },

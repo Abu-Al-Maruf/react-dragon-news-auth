@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { FaBookmark, FaShare } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const News = ({ news }) => {
+  const {_id} = news;
   return (
     <div className="border rounded-md mt-5">
       <div className="bg-[#F3F3F3] flex items-center justify-between p-5">
@@ -22,9 +24,9 @@ const News = ({ news }) => {
         <h2 className="text-[#403F3F] text-xl font-bold">{news?.title}</h2>
         <img className="mt-6 rounded-md" src={news?.image_url} alt="" />
         <p className="text-[#706F6F] mt-10">{news?.details}</p>
-        <a className="text-orange-600 font-semibold" href="#">
+        <Link to={`/newsdetails/${_id}`} className="text-orange-600 font-semibold" href="#">
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   );
